@@ -28,7 +28,7 @@ class Pessoa:
 
 #Define a classe Pessoa fisica - > derivada  da classe pessoa
 
-class PessoFisica(Pessoa):
+class PessoaFisica(Pessoa):
     """Class to represent fisical people."""
     
     #Cria uma pessoa fisica
@@ -42,24 +42,24 @@ class PessoFisica(Pessoa):
         #Inicializa o valor do atributo 'cpf', presente somente na classe PessoaFisica
         self.cpf=cpf
 
-#Retorna informações da pessoa fisica
-def get_info(self):
-    """Return person info"""
+    #Retorna informações da pessoa fisica
+    def get_info(self):
+        """Return person info"""
 
-    #O Super() permite que se utilize o metodo get_info(), definido na super classe Pessoa
-    info= super().get_info()
-    info+= "\n    CPF: %s."%(self.cpf)
-    return info
+        #O Super() permite que se utilize o metodo get_info(), definido na super classe Pessoa
+        info= super().get_info()
+        info+= "\n    CPF: %s."%(self.cpf)
+        return info
 
 #Método para validar o CPF
 
-def valida_cpf(self):
-    """Validates CPF"""
+    def valida_cpf(self):
+        """Validates CPF"""
 
-    #TO-DO
-    print("Validando o CPF do %s..." %(self.nome))
+        #TO-DO
+        print("Validando o CPF do %s..." %(self.nome))
 
-class PessoJuridica(Pessoa):
+class PessoaJuridica(Pessoa):
     """Class to represent legal people."""
     
     #Cria uma pessoa juridica
@@ -73,14 +73,14 @@ class PessoJuridica(Pessoa):
         #Inicializa o valor do atributo 'cnpj', presente somente na classe PessoaJuridica
         self.cnpj=cnpj
 
-#Retorna informações da pessoa Juridica
-def get_info(self):
-    """Return person info"""
+    #Retorna informações da pessoa Juridica
+    def get_info(self):
+        """Return person info"""
 
-    #O Super() permite que se utilize o metodo get_info(), definido na super classe Pessoa
-    info= super().get_info()
-    info+= "\n    CNPJ: %s."%(self.cnpj)
-    return info
+         #O Super() permite que se utilize o metodo get_info(), definido na super classe Pessoa
+        info= super().get_info()
+        info+= "\n    CNPJ: %s."%(self.cnpj)
+        return info
 
 #Método para validar o CNPJ
 
@@ -89,6 +89,8 @@ def valida_cnpj(self):
 
     #TO-DO
     print("Validando o CNPJ do %s..." %(self.nome))
+
+#Trecho com o Codigo principal do programa
 
 def main():
 
@@ -106,6 +108,20 @@ def main():
     print()
     print('-' * 55)
     print()
+    #Cria e exibe informações de uma pessoa fisica
+    joao = PessoaFisica('João Carlos', 'Rua do João', '111.222.333.45')
+
+    print("Exibindo informações da pessoa fisica:\n")
+    print(joao)
+    print()
+
+    #Chama o metodo para validar o CPF do João
+    joao.valida_cpf()
+
+    print()
+    print("-"*55)
+    print()
+
 
 # Executa o trecho com o código principal
 if __name__ == "__main__":
